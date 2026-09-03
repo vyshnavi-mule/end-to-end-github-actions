@@ -5,7 +5,6 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
     <apikit:config name="end-to-end-github-actions-flow-config" api="end-to-end-github-actions-flow.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
-    <api-gateway:autodiscovery apiId="${mule.instance}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="f713a905-0cdf-4efc-8667-d1a548d8546e" flowRef="end-to-end-github-actions-flow-main" />
 	<flow name="end-to-end-github-actions-flow-main">
         <http:listener config-ref="end-to-end-github-actions-flow-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
@@ -134,5 +133,7 @@ output application/json
 "success" as String {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
             </ee:message>
         </ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="906f1cbd-11ef-4bc4-b064-7e5f27a66584" message="#[&quot;Client ID: #[p('anypoint.platform.client_id')&quot;]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="7eaa6c50-5619-40a8-b640-49c428d6cc3d" message="#[&quot;Mule Instance: #[p('mule.instance')]&quot;]"/>
     </flow>
 </mule>
