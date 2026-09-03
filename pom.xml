@@ -40,7 +40,7 @@
 						<target>Cloudhub-US-East-2</target>
 						<muleVersion>4.11.0</muleVersion>
 						<server>Repository</server>
-						<applicationName>${artifactId}-${mule.env}</applicationName>
+						<applicationName>github-actions-end-to-end</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 						<properties>
