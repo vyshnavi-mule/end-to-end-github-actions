@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.12.2:8e</app.runtime>
+		<app.runtime>4.12.2</app.runtime>
 		<mule.maven.plugin.version>4.5.3</mule.maven.plugin.version>
 	</properties>
 
@@ -38,7 +38,7 @@
 						<provider>MC</provider>
 						<environment>${mule.env}</environment>
 						<target>Cloudhub-US-East-2</target>
-						<muleVersion>4.11.0</muleVersion>
+						<muleVersion>4.12.2</muleVersion>
 						<server>Repository</server>
 						<applicationName>github-actions-end-to-end</applicationName>
 						<replicas>1</replicas>
